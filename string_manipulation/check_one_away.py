@@ -12,25 +12,20 @@ def characters_with_index(text):
 
 
 def check_one_away(text1, text2):
+    if abs(len(text1) - len(text2)) > 1:
+        # more than one change is not allowed
+        return False
+
     min_text = text1 if len(text1) <= len(text2) else text2
     max_text = text1 if len(text1) > len(text2) else text2
 
     max_characters = characters_with_index(max_text)
     min_characters = characters_with_index(min_text)
-    difference = max_characters.difference(min_characters)
+    differences = max_characters.difference(min_characters)
 
-    if len(difference) > 1 and max_characters != min_characters:
-        # cope with strings of the same length but different content
-        return False
-
-    if len(difference) >= 0 and not max_text.startswith(min_text):
-        # possible insertion in the middle
-        positions = sorted([x for (x, _) in difference])
-        return positions[0] + len(positions) - 1 == positions[len(positions) - 1]
-    elif len(difference) >= 1 and max_text.startswith(min_text):
-        return False
-    else:
-        return True
+    sorted_differences = sorted(differences, key=lambda x: x[0])
+    different_characters = ''.join([character for (_, character) in sorted_differences])
+    return different_characters[1:] in min_text or different_characters[:-1] in min_text
 
 
 if __name__ == "__main__":
