@@ -6,15 +6,6 @@ drome. A palindrome is a word or phrase that is the same forwards and backwards.
 **Incomplete**
 -----
 """
-import unittest
-
-class TestPermutation(unittest.TestCase):
-    def setUp(self):
-        pass
-
-    def test_empty(self):
-        self.assertEqual(is_palindrome(""), True)
-
 
 
 
@@ -23,11 +14,12 @@ def split_string(text):
     secondpart = text[len(text) // 2 if len(text) % 2 == 0 else ((len(text) // 2) + 1):]
     return firstpart, secondpart
 
-def is_palindrome(text):
+
+def is_palindrome_permutation(text):
     firstpart, secondpart = split_string(text)
     return set(firstpart) == set(secondpart)
 
+
 if __name__ == "__main__":
     text = input("insert text:")
-    print(is_palindrome(text))
-    unittest.main()
+    print(is_palindrome_permutation(text))
