@@ -12,3 +12,9 @@ class TestCheck_anagram(TestCase):
 
     def test_check_anagram_empty_one_empty(self):
         self.assertEqual(False, check_anagram("a", ""))
+
+    def test_check_anagram_word(self):
+        self.assertEqual(True, check_anagram("word", "drow"))
+
+    def test_check_anagram_cc(self):
+        self.assertEqual(True, check_anagram("cc", "ccccccccc"))
