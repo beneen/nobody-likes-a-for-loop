@@ -11,7 +11,7 @@ def rotate_matrix(matrix):
 
 def main():
     #hardcoded matrix
-    matrix = [[1, 2, 3, 8], [4, 5, 6, 9], [7, 8, 9, 0], [1, 2, 3, 4]]
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     print(rotate_matrix(matrix))
 
 
