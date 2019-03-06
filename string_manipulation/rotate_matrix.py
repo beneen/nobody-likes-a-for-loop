@@ -1,7 +1,6 @@
 """
 -----
-Given an image represented by an NxN matrix, where each pixel in the image is 4
-bytes, write a method to rotate the image by 90 degrees. (an you do this in place?
+Given an image represented by an NxN matrix, write a method to rotate the image by 90 degrees. can you do this in place?
 -----
 """
 
@@ -11,6 +10,7 @@ def rotate_matrix(matrix):
 
 
 def main():
+    #hardcoded matrix
     matrix = [[1, 2, 3, 8], [4, 5, 6, 9], [7, 8, 9, 0], [1, 2, 3, 4]]
     print(rotate_matrix(matrix))
 
