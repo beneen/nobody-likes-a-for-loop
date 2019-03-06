@@ -6,7 +6,7 @@ call to isSubstring (e.g., "waterbottle" is a rotation of "erbottlewat")
 -----
 """
 
-def string_rotation(string, possible_substring):
+def duplicate_characters(string, possible_substring):
     return (len(string) == len(possible_substring) and string in possible_substring * 2)
 
 def main():
