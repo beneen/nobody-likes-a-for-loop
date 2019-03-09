@@ -16,6 +16,3 @@ class TestCheck_duplicate_characters(TestCase):
     def test_check_duplicate_characters_two_characters_same(self):
         self.assertEqual("e", check_duplicate_characters("ee"))
 
-    def test_check_duplicate_characters_two_characters_same_with_duplicate_spaces(self):
-        self.assertEqual("e ", check_duplicate_characters("ee  "))
-
